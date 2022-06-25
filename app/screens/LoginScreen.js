@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, ScrollView, Image, StyleSheet } from 'react-native'
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
 import { RFPercentage } from 'react-native-responsive-fontsize';
 import { AntDesign } from '@expo/vector-icons';
 

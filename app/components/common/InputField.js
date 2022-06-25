@@ -37,20 +37,9 @@ function InputField({
     color = "black",
     ...otherProps
 }) {
-    const [eyeIcon, setEyeIcon] = useState(false);
 
     return (
         <View style={{ alignItems: "center", justifyContent: "center", flexDirection: "row", backgroundColor: backgroundColor, borderColor: borderColor, borderWidth: borderWidth, width: width, height: height, borderRadius: borderRadius, marginVertical: RFPercentage(0.7), }} >
-            {leftIconName ? (
-                <TouchableOpacity style={{ alignItems: 'center', justifyContent: 'center', position: "absolute", left: RFPercentage(1), width: RFPercentage(5), height: RFPercentage(5), borderRadius: RFPercentage(1.2) }}>
-                    <MaterialIcons
-                        color={Colors.darkGrey2}
-                        size={RFPercentage(2.8)}
-                        // style={{ right: RFPercentage(1) }}
-                        name={leftIconName}
-                    />
-                </TouchableOpacity>
-            ) : null}
 
             <TextInput
                 placeholder={placeholder}
@@ -63,54 +52,11 @@ function InputField({
                 autoFocus={autoFocus}
                 keyboardType={keyboardType}
                 secureTextEntry={secure && !eyeIcon}
-                textAlign={textCenter}
-                style={{ flexWrap: 'wrap', left: placeholderAtCenter ? RFPercentage(3) : 0, color: color, alignSelf: "center", fontFamily: fontFamily, fontSize: fontSize, width: leftIconName ? "85%" : "90%" }}
+                textAlign={"right"}
+                style={{ flexWrap: 'wrap', right: RFPercentage(3), color: color, alignSelf: "center", fontFamily: fontFamily, fontSize: fontSize, width: leftIconName ? "85%" : "90%" }}
                 {...otherProps}
             ></TextInput>
 
-            {handleClear && value.length > 0 ? (
-                <TouchableOpacity onPress={() => handleFeild('')} style={{ position: "absolute", right: RFPercentage(1), }}>
-                    <MaterialCommunityIcons
-                        color={Colors.inputFieldBorder}
-                        style={{ right: RFPercentage(1) }}
-                        size={RFPercentage(3)}
-                        name="close"
-                    />
-                </TouchableOpacity>
-            ) : null}
-
-            {editIcon ? (
-                <TouchableOpacity onPress={() => handleFeild('')} style={{ position: "absolute", right: RFPercentage(1), top: RFPercentage(1.4) }}>
-                    <MaterialIcons
-                        color={Colors.inputFieldBorder}
-                        style={{ right: RFPercentage(1) }}
-                        size={RFPercentage(1.5)}
-                        name="edit"
-                    />
-                </TouchableOpacity>
-            ) : null}
-
-            {dropdownIcon ? (
-                <TouchableOpacity style={{ position: "absolute", right: RFPercentage(2) }}>
-                    <Ionicons
-                        color={Colors.circle}
-                        style={{ right: RFPercentage(1) }}
-                        size={RFPercentage(4)}
-                        name="caret-down"
-                    />
-                </TouchableOpacity>
-            ) : null}
-
-            {secure ? (
-                <TouchableOpacity onPress={() => setEyeIcon(!eyeIcon)} style={{ position: "absolute", right: RFPercentage(1), }}>
-                    <MaterialCommunityIcons
-                        color={eyeIcon ? Colors.darkGrey2 : Colors.darkGrey}
-                        style={{ right: RFPercentage(1) }}
-                        size={RFPercentage(3)}
-                        name={eyeIcon ? "eye-outline" : "eye-off-outline"}
-                    />
-                </TouchableOpacity>
-            ) : null}
         </View>
     );
 }

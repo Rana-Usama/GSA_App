@@ -38,7 +38,7 @@ function ServicesScreen(props) {
 
             {/* Back Navigation Icon */}
             <TouchableOpacity activeOpacity={0.7} style={{ position: 'absolute', top: RFPercentage(5), left: RFPercentage(3) }} >
-                <AntDesign name="back" style={{ fontSize: RFPercentage(2.8) }} color={Colors.black} />
+                <AntDesign name="back" style={{ fontSize: RFPercentage(2.4) }} color={Colors.black} />
             </TouchableOpacity>
 
             {/* Heading */}
