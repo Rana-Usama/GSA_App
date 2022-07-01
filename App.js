@@ -13,10 +13,13 @@ import ProfileScreen from './app/screens/ProfileScreen';
 import LoginScreen2 from './app/screens/LoginScreen2';
 import SignupScreen from './app/screens/SignupScreen';
 import PasswordRecoveryScreen from './app/screens/PasswordRecoveryScreen';
+import PasswordRecovery2Screen from './app/components/PasswordRecovery2Screen';
+import BeneficiaryReq1Screen from './app/screens/BeneficiaryReq1Screen';
 
 //config
 import Colors from './app/config/Colors';
-import PasswordRecovery2Screen from './app/components/PasswordRecovery2Screen';
+import BeneficiaryReq2Screen from './app/screens/BeneficiaryReq2Screen';
+import BeneficiaryReq3Screen from './app/screens/BeneficiaryReq3Screen';
 
 const Stack = createStackNavigator();
 
@@ -36,7 +39,7 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="PasswordRecovery2Screen">
+      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="BeneficiaryReq3Screen">
         <Stack.Screen name="NewsFeedScreen" component={NewsFeedScreen} />
         <Stack.Screen name="ServicesScreen" component={ServicesScreen} />
         <Stack.Screen name="LoginScreen" component={LoginScreen} />
@@ -45,6 +48,9 @@ export default function App() {
         <Stack.Screen name="SignupScreen" component={SignupScreen} />
         <Stack.Screen name="PasswordRecoveryScreen" component={PasswordRecoveryScreen} />
         <Stack.Screen name="PasswordRecovery2Screen" component={PasswordRecovery2Screen} />
+        <Stack.Screen name="BeneficiaryReq1Screen" component={BeneficiaryReq1Screen} />
+        <Stack.Screen name="BeneficiaryReq2Screen" component={BeneficiaryReq2Screen} />
+        <Stack.Screen name="BeneficiaryReq3Screen" component={BeneficiaryReq3Screen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -105,7 +105,7 @@ function LoginScreen2(props) {
                 <MyAppButton
                     title="التالي"
                     padding={RFPercentage(2.4)}
-                    // onPress={() => handleLogin()}
+                    // onPress={() => props.navigation.navigate("SignupScreen")}
                     backgroundColor={Colors.primary}
                     color={Colors.white}
                     bold={false}

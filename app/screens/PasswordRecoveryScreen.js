@@ -105,7 +105,7 @@ function PasswordRecoveryScreen(props) {
                 <MyAppButton
                     title="ارسال"
                     padding={RFPercentage(2.4)}
-                    onPress={() => handlePassRecovery()}
+                    onPress={() => props.navigation.navigate("PasswordRecovery2Screen")}
                     backgroundColor={Colors.primary}
                     color={Colors.white}
                     bold={false}

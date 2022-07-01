@@ -12,7 +12,7 @@ import InputField from './../components/common/InputField';
 //config
 import Colors from '../config/Colors';
 
-function SignupScreen(props) {
+function BeneficiaryReq2Screen(props) {
 
 
     // Input fields
@@ -20,27 +20,27 @@ function SignupScreen(props) {
 
     const [inputField, SetInputField] = useState([
         {
-            placeholder: "الاسم الرباعي",
+            placeholder: "معلومات الدخل",
             value: "",
         },
         {
-            placeholder: "رقم الجوال",
+            placeholder: "العنوان",
             value: "",
         },
         {
-            placeholder: "المدينة",
+            placeholder: "نوع السكن",
             value: "",
         },
         {
-            placeholder: "الحي",
+            placeholder: "نوع الاعاقة",
             value: "",
         },
         {
-            placeholder: "البريد الإلكتروني",
+            placeholder: "كيفية الإصابة بالإعاقة",
             value: "",
         },
         {
-            placeholder: "عنوان العمل",
+            placeholder: "طلبات المستفيد من الجمعية",
             value: "",
         },
     ]);
@@ -52,7 +52,7 @@ function SignupScreen(props) {
 
     };
 
-    const handleSignup = () => {
+    const handleBenf = () => {
         showIndicator(true);
         let tempfeilds = [...inputField];
 
@@ -83,7 +83,7 @@ function SignupScreen(props) {
             {/* Heading */}
             <View style={{ marginTop: RFPercentage(13), width: '85%', justifyContent: 'flex-end', alignItems: 'center', flexDirection: 'row', alignSelf: 'center' }} >
                 <Text style={{ color: Colors.black, fontSize: RFPercentage(5), fontFamily: 'Comfortaa_400Regular' }} >
-                    تسجيل جديد
+                    تسجيل مستفيد
                 </Text>
             </View>
 
@@ -115,9 +115,9 @@ function SignupScreen(props) {
                     {/* Button */}
                     <View style={{ width: "100%", alignItems: "center", marginTop: RFPercentage(8) }}>
                         <MyAppButton
-                            title="التالي"
+                            title="متابعة"
                             padding={RFPercentage(2.4)}
-                            onPress={() => props.navigation.navigate("LoginScreen2")}
+                            // onPress={() => props.navigation.navigate("LoginScreen2")}
                             backgroundColor={Colors.primary}
                             color={Colors.white}
                             bold={false}
@@ -143,4 +143,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default SignupScreen;
+export default BeneficiaryReq2Screen;
