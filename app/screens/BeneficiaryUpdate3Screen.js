@@ -10,7 +10,7 @@ import MyAppButton from './../components/common/MyAppButton';
 //config
 import Colors from '../config/Colors';
 
-function BeneficiaryReq3Screen(props) {
+function BeneficiaryUpdate3Screen(props) {
 
     return (
         <Screen style={styles.screen}>
@@ -85,7 +85,7 @@ function BeneficiaryReq3Screen(props) {
                 <MyAppButton
                     title="إرسال"
                     padding={RFPercentage(2.4)}
-                    onPress={() => props.navigation.navigate("ConfirmationScreen")}
+                    // onPress={() => props.navigation.navigate("LoginScreen2")}
                     backgroundColor={Colors.primary}
                     color={Colors.white}
                     bold={false}
@@ -107,4 +107,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default BeneficiaryReq3Screen;
+export default BeneficiaryUpdate3Screen;

@@ -15,11 +15,16 @@ import SignupScreen from './app/screens/SignupScreen';
 import PasswordRecoveryScreen from './app/screens/PasswordRecoveryScreen';
 import PasswordRecovery2Screen from './app/components/PasswordRecovery2Screen';
 import BeneficiaryReq1Screen from './app/screens/BeneficiaryReq1Screen';
+import BeneficiaryReq2Screen from './app/screens/BeneficiaryReq2Screen';
+import BeneficiaryReq3Screen from './app/screens/BeneficiaryReq3Screen';
+import BeneficiaryUpdate1Screen from './app/screens/BeneficiaryUpdate1Screen';
+import BeneficiaryUpdate2Screen from './app/screens/BeneficiaryUpdate2Screen';
+import BeneficiaryUpdate3Screen from './app/screens/BeneficiaryUpdate3Screen';
+import ConfirmationScreen from './app/screens/ConfirmationScreen';
+import MembershipRenwalScreen from './app/screens/MembershipRenwalScreen';
 
 //config
 import Colors from './app/config/Colors';
-import BeneficiaryReq2Screen from './app/screens/BeneficiaryReq2Screen';
-import BeneficiaryReq3Screen from './app/screens/BeneficiaryReq3Screen';
 
 const Stack = createStackNavigator();
 
@@ -39,7 +44,7 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="BeneficiaryReq3Screen">
+      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="MembershipRenwalScreen">
         <Stack.Screen name="NewsFeedScreen" component={NewsFeedScreen} />
         <Stack.Screen name="ServicesScreen" component={ServicesScreen} />
         <Stack.Screen name="LoginScreen" component={LoginScreen} />
@@ -51,6 +56,11 @@ export default function App() {
         <Stack.Screen name="BeneficiaryReq1Screen" component={BeneficiaryReq1Screen} />
         <Stack.Screen name="BeneficiaryReq2Screen" component={BeneficiaryReq2Screen} />
         <Stack.Screen name="BeneficiaryReq3Screen" component={BeneficiaryReq3Screen} />
+        <Stack.Screen name="BeneficiaryUpdate1Screen" component={BeneficiaryUpdate1Screen} />
+        <Stack.Screen name="BeneficiaryUpdate2Screen" component={BeneficiaryUpdate2Screen} />
+        <Stack.Screen name="BeneficiaryUpdate3Screen" component={BeneficiaryUpdate3Screen} />
+        <Stack.Screen name="ConfirmationScreen" component={ConfirmationScreen} />
+        <Stack.Screen name="MembershipRenwalScreen" component={MembershipRenwalScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
