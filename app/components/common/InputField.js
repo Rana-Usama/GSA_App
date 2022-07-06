@@ -31,6 +31,7 @@ function InputField({
     height = RFPercentage(6.9),
     secure = false,
     handleClear = false,
+    placeholderAtStart = false,
     leftIconName = '',
     autoFocus = false,
     searchMarginLeft = null,
@@ -53,7 +54,7 @@ function InputField({
                 keyboardType={keyboardType}
                 secureTextEntry={secure && !eyeIcon}
                 textAlign={"right"}
-                style={{ flexWrap: 'wrap', right: RFPercentage(3), color: color, alignSelf: "center", fontFamily: fontFamily, fontSize: fontSize, width: leftIconName ? "85%" : "90%" }}
+                style={{ flexWrap: 'wrap', right: RFPercentage(3), top: placeholderAtStart ? RFPercentage(-10) : 0, color: color, alignSelf: "center", fontFamily: fontFamily, fontSize: fontSize, width: leftIconName ? "85%" : "90%", }}
                 {...otherProps}
             ></TextInput>
 

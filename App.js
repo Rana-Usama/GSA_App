@@ -25,6 +25,10 @@ import MembershipRenwalScreen from './app/screens/MembershipRenwalScreen';
 
 //config
 import Colors from './app/config/Colors';
+import EmploymentScreen from './app/screens/EmploymentScreen';
+import VolunteeringScreen from './app/screens/VolunteeringScreen';
+import ComplaintScreen from './app/screens/ComplaintScreen';
+import RecommendationScreen from './app/screens/RecommendationScreen';
 
 const Stack = createStackNavigator();
 
@@ -44,7 +48,7 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="MembershipRenwalScreen">
+      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="RecommendationScreen">
         <Stack.Screen name="NewsFeedScreen" component={NewsFeedScreen} />
         <Stack.Screen name="ServicesScreen" component={ServicesScreen} />
         <Stack.Screen name="LoginScreen" component={LoginScreen} />
@@ -61,6 +65,10 @@ export default function App() {
         <Stack.Screen name="BeneficiaryUpdate3Screen" component={BeneficiaryUpdate3Screen} />
         <Stack.Screen name="ConfirmationScreen" component={ConfirmationScreen} />
         <Stack.Screen name="MembershipRenwalScreen" component={MembershipRenwalScreen} />
+        <Stack.Screen name="EmploymentScreen" component={EmploymentScreen} />
+        <Stack.Screen name="VolunteeringScreen" component={VolunteeringScreen} />
+        <Stack.Screen name="ComplaintScreen" component={ComplaintScreen} />
+        <Stack.Screen name="RecommendationScreen" component={RecommendationScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
