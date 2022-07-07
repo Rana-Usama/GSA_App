@@ -83,7 +83,7 @@ function BeneficiaryReq1Screen(props) {
             {/* Heading */}
             <View style={{ marginTop: RFPercentage(13), width: '85%', justifyContent: 'flex-end', alignItems: 'center', flexDirection: 'row', alignSelf: 'center' }} >
                 <Text style={{ color: Colors.black, fontSize: RFPercentage(5), fontFamily: 'Comfortaa_400Regular' }} >
-                    تسجيل مستفيد
+                    تحديث بيانات مستفيد
                 </Text>
             </View>
 

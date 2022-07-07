@@ -31,7 +31,7 @@ function LoginScreen(props) {
             {/* Buttons */}
             <View style={{ width: "100%", alignItems: "center", marginTop: RFPercentage(14) }}>
                 <MyAppButton
-                    title="تسجيل جديد"
+                    title="تسجيل الدخول"
                     padding={RFPercentage(2.4)}
                     onPress={() => props.navigation.navigate("LoginScreen2")}
                     backgroundColor={Colors.primary}

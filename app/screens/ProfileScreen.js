@@ -47,7 +47,7 @@ function ProfileScreen(props) {
                     </TouchableOpacity>
                     <TouchableOpacity activeOpacity={0.8} onPress={() => props.navigation.navigate("BeneficiaryReq3Screen")} style={{ marginTop: RFPercentage(2.5), width: '73%', height: RFPercentage(9), backgroundColor: '#D8F3DC', justifyContent: 'center', alignItems: 'center', alignSelf: 'center' }} >
                         <Text style={{ color: Colors.black, fontFamily: 'Comfortaa_500Medium', fontSize: RFPercentage(2.4) }} >
-                            تجديد العضوية
+                            الغاء العضوية
                         </Text>
                     </TouchableOpacity>
 
@@ -55,7 +55,7 @@ function ProfileScreen(props) {
                         <MyAppButton
                             title="تسجيل الخروج"
                             padding={RFPercentage(2.4)}
-                            // onPress={() => handleLogin()}
+                            onPress={() => props.navigation.navigate("NewsFeedScreen")}
                             backgroundColor={Colors.primary}
                             color={Colors.white}
                             bold={false}

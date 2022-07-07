@@ -14,7 +14,6 @@ import Colors from '../config/Colors';
 
 function PasswordRecoveryScreen(props) {
 
-
     // Input fields
     const [indicator, showIndicator] = useState(false);
 
