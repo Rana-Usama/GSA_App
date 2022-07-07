@@ -13,7 +13,6 @@ function NewsFeedScreen(props) {
 
     return (
         <Screen style={styles.screen}>
-
             {/* Heading */}
             <View style={{ marginTop: RFPercentage(6), width: '90%', justifyContent: 'flex-end', alignItems: 'center', flexDirection: 'row', alignSelf: 'center' }} >
                 <Text style={{ color: Colors.black, fontSize: RFPercentage(5), fontFamily: 'Comfortaa_400Regular' }} >

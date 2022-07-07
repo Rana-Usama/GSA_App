@@ -14,7 +14,7 @@ function ConfirmationScreen(props) {
     return (
         <Screen style={styles.screen}>
             {/* Back Navigation Icon */}
-            <TouchableOpacity onPress={() => props.navigation.navigate("BeneficiaryReq3Screen")} activeOpacity={0.7} style={{ position: 'absolute', top: RFPercentage(5), left: RFPercentage(3) }} >
+            <TouchableOpacity onPress={() => props.navigation.navigate("MembershipRenwalScreen")} activeOpacity={0.7} style={{ position: 'absolute', top: RFPercentage(5), left: RFPercentage(3) }} >
                 <AntDesign name="back" style={{ fontSize: RFPercentage(2.8) }} color={Colors.black} />
             </TouchableOpacity>
 

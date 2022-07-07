@@ -15,20 +15,26 @@ function ServicesScreen(props) {
     const servicesData = [
         {
             serviceImageSource1: require('../../assets/images/s1.png'),
+            firstPress: "ComplaintScreen",
             title1: 'الشكاوي',
             serviceImageSource2: require('../../assets/images/s2.png'),
+            secondPress: "RecommendationScreen",
             title2: 'الإقتراحات'
         },
         {
             serviceImageSource1: require('../../assets/images/s3.png'),
+            firstPress: "VolunteeringScreen",
             title1: 'العمل التطوعي',
             serviceImageSource2: require('../../assets/images/s4.png'),
+            secondPress: "RecommendationScreen",
             title2: 'الإستفسارات'
         },
         {
             serviceImageSource1: require('../../assets/images/s5.png'),
+            firstPress: "BeneficiaryReq1Screen",
             title1: 'تسجيل مستفيد',
             serviceImageSource2: require('../../assets/images/s6.png'),
+            secondPress: "BeneficiaryReq1Screen",
             title2: `تحديث بيانات مستفيد`
         }
     ]
@@ -37,7 +43,7 @@ function ServicesScreen(props) {
         <Screen style={styles.screen}>
 
             {/* Back Navigation Icon */}
-            <TouchableOpacity activeOpacity={0.7} style={{ position: 'absolute', top: RFPercentage(5), left: RFPercentage(3) }} >
+            <TouchableOpacity activeOpacity={0.7} onPress={() => props.navigation.navigate("NewsFeedScreen")} style={{ position: 'absolute', top: RFPercentage(5), left: RFPercentage(3) }} >
                 <AntDesign name="back" style={{ fontSize: RFPercentage(2.4) }} color={Colors.black} />
             </TouchableOpacity>
 
@@ -55,7 +61,7 @@ function ServicesScreen(props) {
                         <View key={i} style={{ marginTop: RFPercentage(5), width: '79%', justifyContent: 'flex-start', alignItems: 'center', alignSelf: 'center', flexDirection: 'row' }} >
                             {/* Left Service */}
                             <View style={{ justifyContent: 'center', alignItems: 'center' }} >
-                                <TouchableOpacity activeOpacity={0.8} >
+                                <TouchableOpacity onPress={() => props.navigation.navigate(item.firstPress)} activeOpacity={0.8} >
                                     <Image style={{ width: RFPercentage(17), height: RFPercentage(11.2) }} source={item.serviceImageSource1} />
                                 </TouchableOpacity>
                                 <Text style={{ marginTop: RFPercentage(2), color: '#2D6A4F', fontSize: RFPercentage(2.1), fontFamily: 'Comfortaa_700Bold' }} >
@@ -64,7 +70,7 @@ function ServicesScreen(props) {
                             </View>
                             {/* Right Service */}
                             <View style={{ justifyContent: 'center', alignItems: 'center', position: 'absolute', right: 0 }} >
-                                <TouchableOpacity activeOpacity={0.8} >
+                                <TouchableOpacity onPress={() => props.navigation.navigate(item.secondPress)} activeOpacity={0.8} >
                                     <Image style={{ width: RFPercentage(17), height: RFPercentage(11.2) }} source={item.serviceImageSource2} />
                                 </TouchableOpacity>
                                 <Text style={{ marginTop: RFPercentage(2), color: '#2D6A4F', fontSize: RFPercentage(2.1), fontFamily: 'Comfortaa_700Bold' }} >
@@ -78,7 +84,7 @@ function ServicesScreen(props) {
                     {/* Last Service */}
                     <View style={{ marginTop: RFPercentage(5), width: '90%', justifyContent: 'center', alignItems: 'center', alignSelf: 'center', flexDirection: 'row' }} >
                         <View style={{ justifyContent: 'center', alignItems: 'center' }} >
-                            <TouchableOpacity activeOpacity={0.8} >
+                            <TouchableOpacity onPress={() => props.navigation.navigate("EmploymentScreen")} activeOpacity={0.8} >
                                 <Image style={{ width: RFPercentage(17), height: RFPercentage(11.2) }} source={require('../../assets/images/s7.png')} />
                             </TouchableOpacity>
                             <Text style={{ marginTop: RFPercentage(2), color: '#2D6A4F', fontSize: RFPercentage(2.2), fontFamily: 'Comfortaa_700Bold' }} >

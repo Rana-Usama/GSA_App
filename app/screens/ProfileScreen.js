@@ -39,13 +39,13 @@ function ProfileScreen(props) {
                     </View>
 
                     {/* Buttons */}
-                    <TouchableOpacity activeOpacity={0.8} style={{ marginTop: RFPercentage(7), width: '73%', height: RFPercentage(9), justifyContent: 'center', alignItems: 'center', alignSelf: 'center' }} >
+                    <TouchableOpacity onPress={() => props.navigation.navigate("MembershipRenwalScreen")} activeOpacity={0.8} style={{ marginTop: RFPercentage(7), width: '73%', height: RFPercentage(9), justifyContent: 'center', alignItems: 'center', alignSelf: 'center' }} >
                         <View style={{ position: 'absolute', top: 0, right: 0, left: 0, bottom: 0, backgroundColor: "rgba(153,197,160,0.2)" }} />
                         <Text style={{ color: Colors.black, fontFamily: 'Comfortaa_500Medium', fontSize: RFPercentage(2.4) }} >
                             تجديد العضوية
                         </Text>
                     </TouchableOpacity>
-                    <TouchableOpacity activeOpacity={0.8} style={{ marginTop: RFPercentage(2.5), width: '73%', height: RFPercentage(9), backgroundColor: '#D8F3DC', justifyContent: 'center', alignItems: 'center', alignSelf: 'center' }} >
+                    <TouchableOpacity activeOpacity={0.8} onPress={() => props.navigation.navigate("BeneficiaryReq3Screen")} style={{ marginTop: RFPercentage(2.5), width: '73%', height: RFPercentage(9), backgroundColor: '#D8F3DC', justifyContent: 'center', alignItems: 'center', alignSelf: 'center' }} >
                         <Text style={{ color: Colors.black, fontFamily: 'Comfortaa_500Medium', fontSize: RFPercentage(2.4) }} >
                             تجديد العضوية
                         </Text>

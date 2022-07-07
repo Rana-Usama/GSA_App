@@ -45,6 +45,7 @@ function LoginScreen2(props) {
             showIndicator(false);
             return true;
         }
+        props.navigation.navigate("ProfileScreen")
 
         try {
             // API INTEGRATION WILL COME HERE
@@ -60,7 +61,7 @@ function LoginScreen2(props) {
             <LoadingModal show={indicator} />
 
             {/* Back Navigation Icon */}
-            <TouchableOpacity activeOpacity={0.7} style={{ position: 'absolute', top: RFPercentage(5), left: RFPercentage(3) }} >
+            <TouchableOpacity onPress={() => props.navigation.navigate("NewsFeedScreen")} activeOpacity={0.7} style={{ position: 'absolute', top: RFPercentage(5), left: RFPercentage(3) }} >
                 <AntDesign name="back" style={{ fontSize: RFPercentage(2.8) }} color={Colors.black} />
             </TouchableOpacity>
 
@@ -74,7 +75,7 @@ function LoginScreen2(props) {
             {/* Input field */}
             <View style={{ justifyContent: 'center', alignItems: 'center', width: '100%' }}>
                 {inputField.map((item, i) => (
-                    <View key={i} style={{ marginTop: i == 0 ? RFPercentage(8) : RFPercentage(2) }} >
+                    <View key={i} style={{ marginTop: i == 0 ? RFPercentage(6) : RFPercentage(2) }} >
                         <InputField
                             placeholder={item.placeholder}
                             placeholderColor={Colors.darkGrey}
@@ -94,18 +95,18 @@ function LoginScreen2(props) {
                 ))}
             </View>
 
-            <TouchableOpacity activeOpacity={0.8} style={{ marginTop: RFPercentage(4) }} >
+            <TouchableOpacity onPress={() => props.navigation.navigate("PasswordRecoveryScreen")} activeOpacity={0.8} style={{ marginTop: RFPercentage(4) }} >
                 <Text style={{ fontSize: RFPercentage(2.4), fontFamily: 'Comfortaa_700Bold', color: Colors.black, opacity: 0.45 }} >
                     هل نسيت كلمة المرور؟
                 </Text>
             </TouchableOpacity>
 
             {/* Button */}
-            <View style={{ width: "100%", alignItems: "center", marginTop: RFPercentage(8) }}>
+            <View style={{ width: "100%", alignItems: "center", marginTop: RFPercentage(4) }}>
                 <MyAppButton
                     title="التالي"
                     padding={RFPercentage(2.4)}
-                    // onPress={() => props.navigation.navigate("SignupScreen")}
+                    onPress={() => handleLogin()}
                     backgroundColor={Colors.primary}
                     color={Colors.white}
                     bold={false}

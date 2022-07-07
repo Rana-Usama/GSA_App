@@ -17,7 +17,7 @@ function LoginScreen(props) {
         <Screen style={styles.screen}>
 
             {/* Back Navigation Icon */}
-            <TouchableOpacity activeOpacity={0.7} style={{ position: 'absolute', top: RFPercentage(5), left: RFPercentage(3) }} >
+            <TouchableOpacity activeOpacity={0.7} onPress={() => props.navigation.navigate("NewsFeedScreen")} style={{ position: 'absolute', top: RFPercentage(5), left: RFPercentage(3) }} >
                 <AntDesign name="back" style={{ fontSize: RFPercentage(2.8) }} color={Colors.black} />
             </TouchableOpacity>
 
@@ -33,7 +33,7 @@ function LoginScreen(props) {
                 <MyAppButton
                     title="تسجيل جديد"
                     padding={RFPercentage(2.4)}
-                    onPress={() => props.navigation.navigate("SignupScreen")}
+                    onPress={() => props.navigation.navigate("LoginScreen2")}
                     backgroundColor={Colors.primary}
                     color={Colors.white}
                     bold={false}
@@ -46,7 +46,7 @@ function LoginScreen(props) {
                 <MyAppButton
                     title="تسجيل جديد"
                     padding={RFPercentage(2.4)}
-                    // onPress={() => handleLogin()}
+                    onPress={() => props.navigation.navigate("SignupScreen")}
                     backgroundColor={Colors.white}
                     borderColor={Colors.primary}
                     borderWidth={RFPercentage(0.2)}

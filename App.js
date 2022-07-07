@@ -48,7 +48,7 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="RecommendationScreen">
+      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="NewsFeedScreen">
         <Stack.Screen name="NewsFeedScreen" component={NewsFeedScreen} />
         <Stack.Screen name="ServicesScreen" component={ServicesScreen} />
         <Stack.Screen name="LoginScreen" component={LoginScreen} />

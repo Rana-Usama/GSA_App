@@ -60,7 +60,7 @@ function PasswordRecoveryScreen(props) {
             <LoadingModal show={indicator} />
 
             {/* Back Navigation Icon */}
-            <TouchableOpacity activeOpacity={0.7} style={{ position: 'absolute', top: RFPercentage(5), left: RFPercentage(3) }} >
+            <TouchableOpacity activeOpacity={0.7} onPress={() => props.navigation.navigate("LoginScreen2")} style={{ position: 'absolute', top: RFPercentage(5), left: RFPercentage(3) }} >
                 <AntDesign name="back" style={{ fontSize: RFPercentage(2.8) }} color={Colors.black} />
             </TouchableOpacity>
 
@@ -94,7 +94,7 @@ function PasswordRecoveryScreen(props) {
                 ))}
             </View>
 
-            <TouchableOpacity activeOpacity={0.8} style={{ marginTop: RFPercentage(4) }} >
+            <TouchableOpacity activeOpacity={0.8} onPress={() => props.navigation.navigate("PasswordRecovery2Screen")} style={{ marginTop: RFPercentage(4) }} >
                 <Text style={{ fontSize: RFPercentage(2.2), fontFamily: 'Comfortaa_700Bold', color: Colors.black, opacity: 0.45 }} >
                     سيتم إرسال رابط على بريدك الإلكتروني
                 </Text>

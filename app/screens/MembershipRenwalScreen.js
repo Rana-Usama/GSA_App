@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, ScrollView, Image } from 'react-native'
 import { RFPercentage } from 'react-native-responsive-fontsize';
 import { AntDesign } from '@expo/vector-icons';
+import * as ImagePicker from 'expo-image-picker';
 
 //components
 import Screen from '../components/Screen';
@@ -12,10 +13,40 @@ import Colors from '../config/Colors';
 
 function MembershipRenwalScreen(props) {
 
+    const [image, setImage] = useState(null);
+
+    useEffect(() => {
+        (async () => {
+            if (Platform.OS !== 'web') {
+                const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
+                if (status !== 'granted') {
+                    alert('Sorry, we need camera roll permissions to make this work!');
+                }
+            }
+        })();
+    }, []);
+
+    const pickImage = async () => {
+
+        let result = await ImagePicker.launchImageLibraryAsync({
+            mediaTypes: ImagePicker.MediaTypeOptions.Images,
+            allowsEditing: true,
+            aspect: [4, 3],
+            quality: 1,
+        });
+
+        // console.log(result);
+
+        if (!result.cancelled) {
+            setImage(result.uri);
+        }
+    };
+
+
     return (
         <Screen style={styles.screen}>
             {/* Back Navigation Icon */}
-            <TouchableOpacity activeOpacity={0.7} style={{ position: 'absolute', top: RFPercentage(5), left: RFPercentage(3) }} >
+            <TouchableOpacity activeOpacity={0.7} onPress={() => props.navigation.navigate("ProfileScreen")} style={{ position: 'absolute', top: RFPercentage(5), left: RFPercentage(3) }} >
                 <AntDesign name="back" style={{ fontSize: RFPercentage(2.8) }} color={Colors.black} />
             </TouchableOpacity>
 
@@ -74,8 +105,16 @@ function MembershipRenwalScreen(props) {
                         </Text>
                     </View>
 
-                    {/* Icon */}
-                    <Image style={{ marginTop: RFPercentage(5), width: RFPercentage(20), height: RFPercentage(19) }} source={require('../../assets/images/upload.png')} />
+                    {image ?
+                        <TouchableOpacity activeOpacity={0.6} onPress={pickImage} style={{ alignSelf: 'center', marginTop: RFPercentage(3) }} >
+                            <Image source={{ uri: image }} style={{ width: RFPercentage(20), height: RFPercentage(20), borderRadius: RFPercentage(1) }} />
+                        </TouchableOpacity>
+                        :
+                        <TouchableOpacity activeOpacity={0.8} onPress={pickImage}>
+                            <Image style={{ marginTop: RFPercentage(3), width: RFPercentage(20), height: RFPercentage(19) }} source={require('../../assets/images/upload.png')} />
+                        </TouchableOpacity>
+                    }
+
                     <View style={{ justifyContent: 'center', alignItems: 'center', marginTop: RFPercentage(1) }} >
                         <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }} >
                             <Text style={{ fontSize: RFPercentage(2), marginLeft: RFPercentage(1), color: Colors.black, fontFamily: 'Comfortaa_600SemiBold' }} >
@@ -87,12 +126,17 @@ function MembershipRenwalScreen(props) {
                         </View>
                     </View>
 
+
+
+
+
+
                     {/* Button */}
                     <View style={{ width: "100%", alignItems: "center", marginTop: RFPercentage(8) }}>
                         <MyAppButton
                             title="إرسال"
                             padding={RFPercentage(2)}
-                            // onPress={() => props.navigation.navigate("LoginScreen2")}
+                            onPress={() => props.navigation.navigate("ConfirmationScreen")}
                             backgroundColor={Colors.primary}
                             color={Colors.white}
                             bold={false}

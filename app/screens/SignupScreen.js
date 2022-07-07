@@ -61,6 +61,7 @@ function SignupScreen(props) {
             showIndicator(false);
             return true;
         }
+        props.navigation.navigate("NewsFeedScreen")
 
         try {
             // API INTEGRATION WILL COME HERE
