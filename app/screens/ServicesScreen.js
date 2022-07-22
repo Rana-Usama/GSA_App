@@ -5,7 +5,6 @@ import { AntDesign } from '@expo/vector-icons';
 
 //components
 import Screen from '../components/Screen';
-import BottomTab from './../components/common/BottomTab';
 
 //config
 import Colors from '../config/Colors';
@@ -26,12 +25,12 @@ function ServicesScreen(props) {
             firstPress: "VolunteeringScreen",
             title1: 'العمل التطوعي',
             serviceImageSource2: require('../../assets/images/s4.png'),
-            secondPress: "RecommendationScreen",
+            secondPress: "EmploymentScreen",
             title2: 'الإستفسارات'
         },
         {
             serviceImageSource1: require('../../assets/images/s5.png'),
-            firstPress: "BeneficiaryReq1Screen",
+            firstPress: "BeneficiaryUpdate1Screen",
             title1: 'تسجيل مستفيد',
             serviceImageSource2: require('../../assets/images/s6.png'),
             secondPress: "BeneficiaryReq1Screen",
@@ -43,7 +42,7 @@ function ServicesScreen(props) {
         <Screen style={styles.screen}>
 
             {/* Back Navigation Icon */}
-            <TouchableOpacity activeOpacity={0.7} onPress={() => props.navigation.navigate("NewsFeedScreen")} style={{ position: 'absolute', top: RFPercentage(5), left: RFPercentage(3) }} >
+            <TouchableOpacity activeOpacity={0.7} onPress={() => props.navigation.goBack()} style={{ position: 'absolute', top: RFPercentage(5), left: RFPercentage(3) }} >
                 <AntDesign name="back" style={{ fontSize: RFPercentage(2.4) }} color={Colors.black} />
             </TouchableOpacity>
 

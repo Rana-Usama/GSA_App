@@ -54,7 +54,7 @@ export default function App() {
   // Bottom Tab
   const HomeTab = () => (
     <Tab.Navigator
-      initialRouteName="SignupScreen"
+      initialRouteName='LoginScreen'
       screenOptions={{
         headerShown: false,
         tabBarHideOnKeyboard: true,
@@ -121,7 +121,7 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="HomeTab">
+      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="LoginScreen">
         <Stack.Screen name="HomeTab" component={HomeTab} />
         <Stack.Screen name="NewsFeedScreen" component={NewsFeedScreen} />
         <Stack.Screen name="ServicesScreen" component={ServicesScreen} />

@@ -5,7 +5,6 @@ import { AntDesign } from '@expo/vector-icons';
 
 //components
 import Screen from '../components/Screen';
-import BottomTab from './../components/common/BottomTab';
 import MyAppButton from './../components/common/MyAppButton';
 
 //config
@@ -17,9 +16,9 @@ function LoginScreen(props) {
         <Screen style={styles.screen}>
 
             {/* Back Navigation Icon */}
-            <TouchableOpacity activeOpacity={0.7} onPress={() => props.navigation.navigate("NewsFeedScreen")} style={{ position: 'absolute', top: RFPercentage(5), left: RFPercentage(3) }} >
+            {/* <TouchableOpacity activeOpacity={0.7} onPress={() => props.navigation.navigate("NewsFeedScreen")} style={{ position: 'absolute', top: RFPercentage(5), left: RFPercentage(3) }} >
                 <AntDesign name="back" style={{ fontSize: RFPercentage(2.8) }} color={Colors.black} />
-            </TouchableOpacity>
+            </TouchableOpacity> */}
 
             {/* Heading */}
             <View style={{ marginTop: RFPercentage(13), width: '85%', justifyContent: 'flex-end', alignItems: 'center', flexDirection: 'row', alignSelf: 'center' }} >
@@ -33,7 +32,7 @@ function LoginScreen(props) {
                 <MyAppButton
                     title="تسجيل الدخول"
                     padding={RFPercentage(2.4)}
-                    onPress={() => props.navigation.navigate("LoginScreen2")}
+                    onPress={() => props.navigation.navigate("SignupScreen")}
                     backgroundColor={Colors.primary}
                     color={Colors.white}
                     bold={false}
@@ -46,7 +45,7 @@ function LoginScreen(props) {
                 <MyAppButton
                     title="تسجيل جديد"
                     padding={RFPercentage(2.4)}
-                    onPress={() => props.navigation.navigate("SignupScreen")}
+                    onPress={() => props.navigation.navigate("LoginScreen2")}
                     backgroundColor={Colors.white}
                     borderColor={Colors.primary}
                     borderWidth={RFPercentage(0.2)}
@@ -58,8 +57,6 @@ function LoginScreen(props) {
                 />
             </View>
 
-            {/* Bottom Tab */}
-            {/* <BottomTab props={props} /> */}
         </Screen>
     );
 }

@@ -71,7 +71,7 @@ function VolunteeringScreen(props) {
     return (
         <Screen style={styles.screen}>
             {/* Back Navigation Icon */}
-            <TouchableOpacity activeOpacity={0.7} onPress={() => props.navigation.navigate("ServicesScreen")} style={{ position: 'absolute', top: RFPercentage(5), left: RFPercentage(3) }} >
+            <TouchableOpacity activeOpacity={0.7} onPress={() => props.navigation.goBack()} style={{ position: 'absolute', top: RFPercentage(5), left: RFPercentage(3) }} >
                 <AntDesign name="back" style={{ fontSize: RFPercentage(2.8) }} color={Colors.black} />
             </TouchableOpacity>
 
@@ -126,7 +126,7 @@ function VolunteeringScreen(props) {
                             <MyAppButton
                                 title="إرسال"
                                 padding={RFPercentage(2.2)}
-                                // onPress={() => props.navigation.navigate("LoginScreen2")}
+                                onPress={() => props.navigation.navigate("ConfirmationScreen")}
                                 backgroundColor={Colors.primary}
                                 color={Colors.white}
                                 bold={false}

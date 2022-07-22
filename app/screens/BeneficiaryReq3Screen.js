@@ -98,13 +98,17 @@ function BeneficiaryReq3Screen(props) {
 
                     {/* Upload Icon */}
                     {image ?
-                        <TouchableOpacity activeOpacity={0.6} onPress={pickImage} style={{ width: '90%', flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-end', alignSelf: 'center', marginTop: RFPercentage(6) }} >
-                            <Image source={{ uri: image }} style={{ width: RFPercentage(13), height: RFPercentage(13), borderRadius: RFPercentage(1) }} />
-                        </TouchableOpacity>
+                        <View onPress={pickImage} style={{ width: '90%', flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-end', alignSelf: 'center', marginTop: RFPercentage(6) }} >
+                            <TouchableOpacity activeOpacity={0.8} onPress={pickImage} >
+                                <Image source={{ uri: image }} style={{ width: RFPercentage(13), height: RFPercentage(13), borderRadius: RFPercentage(1) }} />
+                            </TouchableOpacity>
+                        </View>
                         :
-                        <TouchableOpacity activeOpacity={0.8} onPress={pickImage} style={{ width: '90%', flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-end', alignSelf: 'center', marginTop: RFPercentage(6) }} >
-                            <Image style={{ width: RFPercentage(13), height: RFPercentage(12.2) }} source={require('../../assets/images/upload.png')} />
-                        </TouchableOpacity>
+                        <View activeOpacity={0.8} style={{ width: '90%', flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-end', alignSelf: 'center', marginTop: RFPercentage(6) }} >
+                            <TouchableOpacity activeOpacity={0.8} onPress={pickImage} >
+                                <Image style={{ width: RFPercentage(13), height: RFPercentage(12.2) }} source={require('../../assets/images/upload.png')} />
+                            </TouchableOpacity>
+                        </View>
                     }
 
                     <View style={{ marginTop: RFPercentage(1), width: '85%', flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-end', alignSelf: 'center' }} >

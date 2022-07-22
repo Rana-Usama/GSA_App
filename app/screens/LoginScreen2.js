@@ -45,7 +45,7 @@ function LoginScreen2(props) {
             showIndicator(false);
             return true;
         }
-        props.navigation.navigate("ProfileScreen")
+        props.navigation.navigate("HomeTab")
 
         try {
             // API INTEGRATION WILL COME HERE
@@ -115,9 +115,6 @@ function LoginScreen2(props) {
                     width={"85%"}
                 />
             </View>
-
-            {/* Bottom Tab */}
-            {/* <BottomTab props={props} /> */}
         </Screen>
     );
 }

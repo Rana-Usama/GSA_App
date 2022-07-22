@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, ScrollView, Image } from 'react-native'
 import { RFPercentage } from 'react-native-responsive-fontsize';
 import { AntDesign } from '@expo/vector-icons';
+import * as ImagePicker from 'expo-image-picker';
 
 //components
 import Screen from '../components/Screen';
@@ -12,10 +13,39 @@ import Colors from '../config/Colors';
 
 function BeneficiaryUpdate3Screen(props) {
 
+    const [image, setImage] = useState(null);
+
+    useEffect(() => {
+        (async () => {
+            if (Platform.OS !== 'web') {
+                const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
+                if (status !== 'granted') {
+                    alert('Sorry, we need camera roll permissions to make this work!');
+                }
+            }
+        })();
+    }, []);
+
+    const pickImage = async () => {
+
+        let result = await ImagePicker.launchImageLibraryAsync({
+            mediaTypes: ImagePicker.MediaTypeOptions.Images,
+            allowsEditing: true,
+            aspect: [4, 3],
+            quality: 1,
+        });
+
+        // console.log(result);
+
+        if (!result.cancelled) {
+            setImage(result.uri);
+        }
+    };
+
     return (
         <Screen style={styles.screen}>
             {/* Back Navigation Icon */}
-            <TouchableOpacity activeOpacity={0.7} style={{ position: 'absolute', top: RFPercentage(5), left: RFPercentage(3) }} >
+            <TouchableOpacity activeOpacity={0.7} onPress={() => props.navigation.navigate("BeneficiaryUpdate2Screen")} style={{ position: 'absolute', top: RFPercentage(5), left: RFPercentage(3) }} >
                 <AntDesign name="back" style={{ fontSize: RFPercentage(2.8) }} color={Colors.black} />
             </TouchableOpacity>
 
@@ -65,9 +95,21 @@ function BeneficiaryUpdate3Screen(props) {
                     </View>
 
                     {/* Upload Icon */}
-                    <TouchableOpacity activeOpacity={0.8} style={{ width: '90%', flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-end', alignSelf: 'center', marginTop: RFPercentage(6) }} >
-                        <Image style={{ width: RFPercentage(13), height: RFPercentage(12.2) }} source={require('../../assets/images/upload.png')} />
-                    </TouchableOpacity>
+                    {image ?
+                        <View onPress={pickImage} style={{ width: '90%', flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-end', alignSelf: 'center', marginTop: RFPercentage(6) }} >
+                            <TouchableOpacity activeOpacity={0.8} onPress={pickImage} >
+                                <Image source={{ uri: image }} style={{ width: RFPercentage(13), height: RFPercentage(13), borderRadius: RFPercentage(1) }} />
+                            </TouchableOpacity>
+                        </View>
+                        :
+                        <View activeOpacity={0.8} style={{ width: '90%', flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-end', alignSelf: 'center', marginTop: RFPercentage(6) }} >
+                            <TouchableOpacity activeOpacity={0.8} onPress={pickImage} >
+                                <Image style={{ width: RFPercentage(13), height: RFPercentage(12.2) }} source={require('../../assets/images/upload.png')} />
+                            </TouchableOpacity>
+                        </View>
+                    }
+
+
                     <View style={{ marginTop: RFPercentage(1), width: '85%', flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-end', alignSelf: 'center' }} >
                         <Text style={{ color: Colors.black, fontSize: RFPercentage(2.2), fontFamily: 'Comfortaa_400Regular' }} >
                             إرفاق ملف
@@ -85,7 +127,7 @@ function BeneficiaryUpdate3Screen(props) {
                 <MyAppButton
                     title="إرسال"
                     padding={RFPercentage(2.4)}
-                    // onPress={() => props.navigation.navigate("LoginScreen2")}
+                    onPress={() => props.navigation.navigate("ConfirmationScreen")}
                     backgroundColor={Colors.primary}
                     color={Colors.white}
                     bold={false}

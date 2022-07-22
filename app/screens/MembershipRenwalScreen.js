@@ -10,6 +10,7 @@ import MyAppButton from './../components/common/MyAppButton';
 
 //config
 import Colors from '../config/Colors';
+import ProfileScreen from './ProfileScreen';
 
 function MembershipRenwalScreen(props) {
 
@@ -46,14 +47,16 @@ function MembershipRenwalScreen(props) {
     return (
         <Screen style={styles.screen}>
             {/* Back Navigation Icon */}
-            <TouchableOpacity activeOpacity={0.7} onPress={() => props.navigation.navigate("ProfileScreen")} style={{ position: 'absolute', top: RFPercentage(5), left: RFPercentage(3) }} >
-                <AntDesign name="back" style={{ fontSize: RFPercentage(2.8) }} color={Colors.black} />
-            </TouchableOpacity>
+            <View style={{ width: '90%', top: RFPercentage(2), flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', alignSelf: 'center' }} >
+                <TouchableOpacity activeOpacity={0.7} onPress={() => props.navigation.goBack()} >
+                    <AntDesign name="back" style={{ fontSize: RFPercentage(2.8) }} color={Colors.black} />
+                </TouchableOpacity>
+            </View>
 
             <ScrollView style={{ flex: 1, width: '100%' }} >
                 {/* Heading */}
                 <View style={{ justifyContent: 'center', alignItems: 'center', width: '100%' }}>
-                    <View style={{ marginTop: RFPercentage(13), width: '85%', justifyContent: 'flex-end', alignItems: 'center', flexDirection: 'row', alignSelf: 'center' }} >
+                    <View style={{ marginTop: RFPercentage(9), width: '85%', justifyContent: 'flex-end', alignItems: 'center', flexDirection: 'row', alignSelf: 'center' }} >
                         <Text style={{ color: Colors.black, fontSize: RFPercentage(5), fontFamily: 'Comfortaa_400Regular' }} >
                             تجديد العضوية
                         </Text>
