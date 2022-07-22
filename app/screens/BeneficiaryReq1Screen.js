@@ -76,7 +76,7 @@ function BeneficiaryReq1Screen(props) {
             <LoadingModal show={indicator} />
 
             {/* Back Navigation Icon */}
-            <TouchableOpacity activeOpacity={0.7} onPress={() => props.navigation.navigate("ServicesScreen")} style={{ position: 'absolute', top: RFPercentage(5), left: RFPercentage(3) }} >
+            <TouchableOpacity activeOpacity={0.7} onPress={() => props.navigation.goBack("ServicesScreen")} style={{ position: 'absolute', top: RFPercentage(5), left: RFPercentage(3) }} >
                 <AntDesign name="back" style={{ fontSize: RFPercentage(2.8) }} color={Colors.black} />
             </TouchableOpacity>
 
@@ -117,7 +117,7 @@ function BeneficiaryReq1Screen(props) {
                         <MyAppButton
                             title="متابعة"
                             padding={RFPercentage(2.4)}
-                            // onPress={() => props.navigation.navigate("LoginScreen2")}
+                            onPress={() => props.navigation.navigate("BeneficiaryReq2Screen")}
                             backgroundColor={Colors.primary}
                             color={Colors.white}
                             bold={false}

@@ -14,7 +14,6 @@ import Colors from '../config/Colors';
 
 function BeneficiaryReq2Screen(props) {
 
-
     // Input fields
     const [indicator, showIndicator] = useState(false);
 
@@ -76,7 +75,7 @@ function BeneficiaryReq2Screen(props) {
             <LoadingModal show={indicator} />
 
             {/* Back Navigation Icon */}
-            <TouchableOpacity activeOpacity={0.7} style={{ position: 'absolute', top: RFPercentage(5), left: RFPercentage(3) }} >
+            <TouchableOpacity onPress={() => props.navigation.navigate("BeneficiaryReq1Screen")} activeOpacity={0.7} style={{ position: 'absolute', top: RFPercentage(5), left: RFPercentage(3) }} >
                 <AntDesign name="back" style={{ fontSize: RFPercentage(2.8) }} color={Colors.black} />
             </TouchableOpacity>
 
@@ -117,7 +116,7 @@ function BeneficiaryReq2Screen(props) {
                         <MyAppButton
                             title="متابعة"
                             padding={RFPercentage(2.4)}
-                            // onPress={() => props.navigation.navigate("LoginScreen2")}
+                            onPress={() => props.navigation.navigate("BeneficiaryReq3Screen")}
                             backgroundColor={Colors.primary}
                             color={Colors.white}
                             bold={false}

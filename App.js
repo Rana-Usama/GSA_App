@@ -58,7 +58,7 @@ export default function App() {
       screenOptions={{
         headerShown: false,
         tabBarHideOnKeyboard: true,
-        tabBarStyle: { height: RFPercentage(7.5) },
+        tabBarStyle: { height: RFPercentage(9) },
         showLabel: false,
         // style: { height: RFPercentage(20) },
         tabStyle: { backgroundColor: Colors.white },

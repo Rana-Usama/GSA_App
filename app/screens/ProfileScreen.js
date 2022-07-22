@@ -5,7 +5,6 @@ import { AntDesign } from '@expo/vector-icons';
 
 //components
 import Screen from '../components/Screen';
-import BottomTab from './../components/common/BottomTab';
 import MyAppButton from './../components/common/MyAppButton';
 
 //config
@@ -19,7 +18,7 @@ function ProfileScreen(props) {
             {/* Nav */}
             <View style={{ width: '100%', height: RFPercentage(26), backgroundColor: '#D8F3DC80' }} >
                 {/* Back Navigation Icon */}
-                <TouchableOpacity activeOpacity={0.7} style={{ position: 'absolute', top: RFPercentage(5), left: RFPercentage(3) }} >
+                <TouchableOpacity onPress={() => props.navigation.goBack("NewsFeedScreen")} activeOpacity={0.7} style={{ position: 'absolute', top: RFPercentage(5), left: RFPercentage(3) }} >
                     <AntDesign name="back" style={{ fontSize: RFPercentage(2.4) }} color={Colors.black} />
                 </TouchableOpacity>
             </View>
@@ -55,7 +54,7 @@ function ProfileScreen(props) {
                         <MyAppButton
                             title="تسجيل الخروج"
                             padding={RFPercentage(2.4)}
-                            onPress={() => props.navigation.navigate("NewsFeedScreen")}
+                            onPress={() => props.navigation.goBack("NewsFeedScreen")}
                             backgroundColor={Colors.primary}
                             color={Colors.white}
                             bold={false}
