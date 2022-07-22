@@ -70,7 +70,7 @@ function ProfileScreen(props) {
             </ScrollView>
 
             {/* Bottom Tab */}
-            <BottomTab props={props} />
+            {/* <BottomTab props={props} /> */}
         </Screen>
     );
 }

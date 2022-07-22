@@ -59,7 +59,7 @@ function LoginScreen(props) {
             </View>
 
             {/* Bottom Tab */}
-            <BottomTab props={props} />
+            {/* <BottomTab props={props} /> */}
         </Screen>
     );
 }

@@ -23,6 +23,9 @@ function BottomTab({ props }) {
                     <Text style={{ color: Colors.white, fontFamily: 'Comfortaa_400Regular', fontSize: RFPercentage(1.9), marginTop: RFPercentage(0.8) }} >
                         الخدمات
                     </Text>
+                    <View style={{ width: RFPercentage(10), height: RFPercentage(0.5), borderRadius: RFPercentage(20), backgroundColor: Colors.white }} >
+
+                    </View>
                 </TouchableOpacity>
 
                 <TouchableOpacity activeOpacity={0.8} onPress={() => props.navigation.navigate("LoginScreen")} style={{ justifyContent: 'center', alignItems: 'center' }} >

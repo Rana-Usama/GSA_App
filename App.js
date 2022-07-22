@@ -1,9 +1,12 @@
 import React from 'react';
 import { View, ActivityIndicator } from 'react-native';
-import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
 import { Comfortaa_400Regular, Comfortaa_500Medium, Comfortaa_600SemiBold, Comfortaa_300Light, Comfortaa_700Bold, useFonts } from "@expo-google-fonts/comfortaa";
 import { RFPercentage } from 'react-native-responsive-fontsize';
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { SimpleLineIcons } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 //screens
 import NewsFeedScreen from './app/screens/NewsFeedScreen.js';
@@ -22,18 +25,20 @@ import BeneficiaryUpdate2Screen from './app/screens/BeneficiaryUpdate2Screen';
 import BeneficiaryUpdate3Screen from './app/screens/BeneficiaryUpdate3Screen';
 import ConfirmationScreen from './app/screens/ConfirmationScreen';
 import MembershipRenwalScreen from './app/screens/MembershipRenwalScreen';
-
-//config
-import Colors from './app/config/Colors';
 import EmploymentScreen from './app/screens/EmploymentScreen';
 import VolunteeringScreen from './app/screens/VolunteeringScreen';
 import ComplaintScreen from './app/screens/ComplaintScreen';
 import RecommendationScreen from './app/screens/RecommendationScreen';
 
+//config
+import Colors from './app/config/Colors';
+
 const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
 
 export default function App() {
 
+  // Font
   const [fontsLoaded] = useFonts({
     Comfortaa_400Regular,
     Comfortaa_300Light,
@@ -46,9 +51,78 @@ export default function App() {
     <ActivityIndicator size={RFPercentage(6)} color={Colors.primary} />
   </View>
 
+  // Bottom Tab
+  const HomeTab = () => (
+    <Tab.Navigator
+      initialRouteName="SignupScreen"
+      screenOptions={{
+        headerShown: false,
+        tabBarHideOnKeyboard: true,
+        tabBarStyle: { height: RFPercentage(7.5) },
+        showLabel: false,
+        // style: { height: RFPercentage(20) },
+        tabStyle: { backgroundColor: Colors.white },
+        // activeTintColor: Colors.primary,
+        tabBarActiveTintColor: Colors.primary
+        // inactiveTintColor: Colors.grey,
+      }}
+    >
+      <Tab.Screen
+        name="الرئيسية"
+        // options={{ header: () => null }}
+        component={NewsFeedScreen}
+        options={{
+          header: () => null,
+          tabBarLabelStyle: {
+            fontSize: RFPercentage(1.9),
+            fontWeight: 'bold',
+            top: RFPercentage(-0.5)
+          },
+          tabBarIcon: ({ color }) => (
+            <SimpleLineIcons name="home" color={color} size={RFPercentage(3.5)} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="الخدمات"
+        // options={{ header: () => null }}
+        component={ServicesScreen}
+        options={{
+          header: () => null,
+          tabBarLabelStyle: {
+            fontSize: RFPercentage(1.9),
+            fontWeight: 'bold',
+            top: RFPercentage(-0.5)
+          },
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="select-group" color={color} size={RFPercentage(3.5)} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="الأعضاء"
+        // options={{ header: () => null }}
+        component={ProfileScreen}
+        options={{
+          header: () => null,
+          tabBarLabelStyle: {
+            fontSize: RFPercentage(1.9),
+            fontWeight: 'bold',
+            top: RFPercentage(-0.5)
+          },
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="account" color={color} size={RFPercentage(3.5)} />
+          ),
+        }}
+      />
+
+    </Tab.Navigator>
+  );
+
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="NewsFeedScreen">
+      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="HomeTab">
+        <Stack.Screen name="HomeTab" component={HomeTab} />
         <Stack.Screen name="NewsFeedScreen" component={NewsFeedScreen} />
         <Stack.Screen name="ServicesScreen" component={ServicesScreen} />
         <Stack.Screen name="LoginScreen" component={LoginScreen} />

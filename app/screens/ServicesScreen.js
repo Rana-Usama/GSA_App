@@ -97,7 +97,7 @@ function ServicesScreen(props) {
                 </View>
             </ScrollView>
             {/* Bottom Tab */}
-            <BottomTab props={props} />
+            {/* <BottomTab props={props} /> */}
         </Screen>
     );
 }
